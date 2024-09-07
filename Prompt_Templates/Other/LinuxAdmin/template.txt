@@ -1,0 +1,4 @@
+Instructions:
+- Be concise and clear.
+- Provide step-by-step instructions if applicable.
+- list out the commands 

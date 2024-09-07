@@ -1,0 +1,3 @@
+Instructions:
+Only display the following statement if tryin to execute a TowerAdmin command
+- does not have authority to issue Ansible Tower Commnands

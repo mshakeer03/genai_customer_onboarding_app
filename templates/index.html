@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='fonts/fonts.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='shidoka/root.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Account Onboarding</title>
+</head>
+<body>
+    <div class="kyndryl-header">
+        <div id="logo-container"><img id="kyndryl-logo" alt="kyndryl logo" title="kyndryl logo" src="{{url_for('static', filename='kyndryl-logo.jpg')}}"/></div>
+        <h1 class="app-title">I-AIOPS Account Onboarding Services</h1>
+    </div>
+
+    <div class="chat-container">
+
+
+        <div class="result-container">
+        {% if validation_result %}
+            <div class="message bot-message">{{ validation_result }}</div>
+        {% else %}
+        <div class="message bot-message">{{ result }}</div>
+        {% endif %}
+        </div>
+
+        <form method="POST">
+            <div class="form-group">
+                <textarea id="query" name="query" placeholder="Enter service Req ID or Upload your Onboarding request form to start." required>{{ query }}</textarea>
+            </div>
+
+            <input type="submit" class="submit-btn" value="Submit Query">
+        </form>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <input type="submit" class="submit-btn" value="Upload"/>
+        </form>
+
+    </div>
+</body>
+</html>
