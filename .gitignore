@@ -1,0 +1,4 @@
+myenv/
+chroma/
+flask_session/
+__pycache__
